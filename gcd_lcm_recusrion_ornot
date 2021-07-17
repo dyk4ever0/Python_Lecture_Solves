@@ -1,0 +1,36 @@
+
+    #안재귀
+
+def gcd(dividend, divisor):
+  if dividend < divisor: 
+    dividend, divisor = divisor, dividend 
+  while dividend % divisor != 0: 
+      dividend, divisor = divisor, dividend % divisor
+  return divisor
+
+    #재귀
+
+def gcd2(dividend, divisor) :
+    if dividend < divisor:
+        dividend, divisor = divisor, dividend
+    if dividend % divisor == 0:
+        return divisor
+    else:
+        return gcd2(divisor, dividend % divisor)
+ 
+
+#lcm
+
+def lcm(m,n):
+	return (m*n)/gcd(m,n)
+ 
+
+#is_prime
+
+    def isprime(n):
+        if n <= 1 :
+            return False
+        for div in range(2,int(math.sqrt(n))+1):
+            if n%div == 0:
+                return False
+        return True
